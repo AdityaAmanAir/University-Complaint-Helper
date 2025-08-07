@@ -1,0 +1,46 @@
+td.cdtpWeek:hover {
+    background-color: rgb(130, 197, 219);
+}
+
+.cdtpDateStyle {
+    font-size: medium;
+}
+
+.cdtpDropMenuStyle {
+    font-size: medium;
+}
+
+.cdtpTimeHour {
+    overflow-y: scroll; /* Adding the ability to scroll */
+  }
+
+/* Hiding scrollbar for Chrome, Safari and Opera */
+.cdtpTimeHour::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hiding scrollbar for IE, Edge and Firefox */
+.cdtpTimeHour {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+
+
+.cdtpTimeMinute {
+    overflow-y: scroll; /* Adding the ability to scroll */
+  }
+
+/* Hiding scrollbar for Chrome, Safari and Opera */
+.cdtpTimeMinute::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hiding scrollbar for IE, Edge and Firefox */
+.cdtpTimeMinute {
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+
+

@@ -1,0 +1,31 @@
+.menuFontStyle {
+    font-family: OpenSans;
+	font-size: 14px;
+}
+
+.menuHeaderFontStyle {
+    font-family: OpenSans;
+	font-size: 14px;
+}
+
+
+.btnBarColor {
+	background-color: rgb(255,255,255);
+}
+
+
+.iconSpace {
+    width:25px;
+}
+
+.iconSpaceHeader {
+    width:28px;
+}
+
+.dropdownMenuBoxWidth {
+    width:300px;
+}
+
+.menuHeaderColor {
+    background-color: rgb( 242, 244, 244);
+}

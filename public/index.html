@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap-icons.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../css/font-awesome.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/PreLogin.css">
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .employeeBtnColor {
+      color: #000000;
+      background-color: #ca9e0d;
+    }
+    .employeeBtnColor:hover {
+      color: #ffffff;
+      background-color: #db810c;
+    
+  }
+  
+  </style>
+
+    <!-- <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.blockUI.js"></script>
+    <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script> -->
+
+</head>
+<body class="WhiteBackground" style="margin-top: 56px;">
+    
+            <nav class="navbar navbar-expand-lg bg-light headerBackgroundColor py-1 fixed-top shadow" id="vtopOpenPageHeader">
+            <div class="container-fluid justify-content-start">
+                <a class="navbar-brand VITLogoStyle text-light" href="javacript:void(0);"><span class="h1 fw-bold">VIT</span>
+                </a>
+                <span class="navbar-text text-light">(Bhopal Campus)</span>
+
+            </div>
+        </nav>
+
+         <div class="container-fluid">
+        <div class="row WhiteBackground pb-5">
+            <div class="col-12">
+                <div class="card card-body border-0 ">
+                    <div class="d-flex flex-column justify-content-center">
+                        <strong class="h2 align-self-center primaryTextColor1  text-center"><b>VTOP</b>
+                            translates to "<b>V</b>IT on
+                            <b>TOP</b>"</strong>
+                        <div class="h6 d-none d-sm-block w-75 mt-2 align-self-center text-dark text-center ">A
+                            digital initiative by
+                            the institute facilitating Faculty, Staff, Students, Parents and
+                            Alumni to access and process Academics, Research, Supporting services at one common
+                            platform.
+                        </div>
+                        <div class="h6 d-block d-sm-none w-100 px-1 mt-2 align-self-center text-dark  text-center">A
+                            digital
+                            initiative by the institute
+                            facilitating Faculty, Staff, Students, Parents and
+                            Alumni to access and process Academics, Research, Supporting services at one common
+                            platform.
+                        </div>
+
+                    </div>
+                    <div class="row row-cols-2 row-cols-sm-4 py-3 g-2 g-sm-5">
+                        
+        <div class="col">
+            <div class="card card-body cardStudent  shadow">
+                
+                        <a href="/login.html?flag=VTOP" class="text-decoration-none">
+                        <div class="d-flex jusitfy-content-start align-items-stretch text-center">
+                            <div class="w-50">
+                                <img src="rescr/students.png" class="img-responsive center imgSize" alt="...">
+                            </div>
+                            <div class="flex-grow-1">
+                                <div class=" text-primary d-block d-lg-none h6">Student</div>
+                                <div class="text-primary d-none d-lg-block h5">Student</div>
+                                <button type="submit" class="btn btn-primary fw-bold"><i class="fa fa-sign-in fa-3"></i></button>
+                            </div>
+                        </div>
+                    </a>
+                </form>
+            </div>
+        </div>
+        <div class="col">
+    <div class="card card-body cardEmployee shadow">
+        <a href="/login.html?flag=VTOP" class="text-decoration-none">
+            <div class="d-flex jusitfy-content-start align-items-stretch text-center">
+                <div class="w-50">
+                    <img src="rescr/employee.png" class="img-responsive center imgSize" alt="...">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="employeeTextColor d-block d-lg-none h6">Employee</div>
+                    <div class="employeeTextColor d-none d-lg-block h5">Employee</div>
+                    <span class="btn btn-outline employeeBtnColor fw-bold">
+                        <i class="fa fa-sign-in fa-3" aria-hidden="true"></i>
+                    </span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+        <div class="col">
+            <div class="card card-body cardParent shadow">
+    <form class="text-center" id="parentForm">
+        <input type="hidden" name="flag" value="parent">
+        <a href="javascript:void(0);" class="text-decoration-none" onclick="showNotAllowedPopup()">
+            <div class="d-flex jusitfy-content-start align-items-stretch">
+                <div class="w-50">
+                    <img src="rescr/parent.png" class="img-responsive center imgSize" alt="...">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="greenText d-block d-lg-none h6">Parent</div>
+                    <div class="greenText d-none d-lg-block h5">Parent</div>
+                    <button type="button" class="btn btn-success fw-bold">
+                        <i class="fa fa-sign-in fa-3" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </a>
+    </form>
+</div>
+
+<!-- NOT ALLOWED Popup -->
+<div id="notAllowedPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(188, 198, 199, 0.63); z-index: 9999;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); text-align: center; animation: mashIn 0.5s forwards;">
+        <i class="fa fa-times-circle" style="font-size: 100px; color: rgb(243, 9, 9);"></i>
+        <h1 style="color: rgb(221, 64, 16); font-weight: bold; margin-top: 20px;">Permission Denied!</h1>
+        <button onclick="closePopup()" style="margin-top: 30px; padding: 10px 30px; background: rgb(7, 207, 57); color: rgb(255, 255, 255); border: none; border-radius: 5px; font-weight: bold;">
+            CLOSE
+        </button>
+    </div>
+</div>
+
+<style>
+    @keyframes mashIn {
+        0% {
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+        }
+        50% {
+            transform: translate(-50%, -50%) scale(1.2);
+            opacity: 1;
+        }
+        70% {
+            transform: translate(-50%, -50%) scale(0.9);
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+</style>
+
+<script>
+    function closePopup() {
+        document.getElementById('notAllowedPopup').style.display = 'none';
+    }
+    
+    // To show the popup with animation:
+    // document.getElementById('notAllowedPopup').style.display = 'block';
+</script>
+
+<script>
+function showNotAllowedPopup() {
+    document.getElementById('notAllowedPopup').style.display = 'block';
+}
+
+function closePopup() {
+    document.getElementById('notAllowedPopup').style.display = 'none';
+}
+</script>
+        </div>
+        <div class="col">
+            <div class="card card-body cardAlumni shadow">
+    <form class="text-center" id="alumniForm">
+        <input type="hidden" name="flag" value="alumni">
+        <a href="javascript:void(0);" class="text-decoration-none" onclick="showNotAllowedPopup()">
+            <div class="d-flex jusitfy-content-start align-items-stretch">
+                <div class="w-50">
+                    <img src="rescr/alumni.png" class="img-responsive center imgSize" alt="...">
+                </div>
+                <div class="flex-grow-1">
+                    <div class="w-bold text-info d-block d-lg-none h6">Alumni</div>
+                    <div class="text-info d-none d-lg-block h5">Alumni</div>
+                    <button type="button" class="btn btn-info fw-bold">
+                        <i class="fa fa-sign-in fa-3" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </a>
+    </form>
+</div>
+        </div>
+
+         </div>
+
+                    <div class="row">
+
+                        <div class="col-12 order-1 order-md-2 mt-sm-1 mb-3">
+                            <div class="row row-cols-2 row-cols-sm-4 py-3 justify-content-center">
+                                <div class="col text-center">
+                                    </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+        <div class="fixed-bottom text-center text-light py-0 footercolor">
+            <span class="small">Copyright © <span class="trim d-none d-sm-inline-block">2025</span>
+                Software Development Cell, VIT, Bhopal-466 114.</span>
+        </div>
+
+        <style>
+        /* Popup styling */
+        #disclaimer-popup {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 10px 2px 30px rgb(10, 94, 219);
+            max-width: 300px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+        
+        #disclaimer-close {
+            float: right;
+            cursor: pointer;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        #disclaimer-popup a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        
+        #disclaimer-popup a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Your existing website content goes here -->
+    
+    <!-- Disclaimer Popup -->
+    <div id="disclaimer-popup">
+        <span id="disclaimer-close" onclick="document.getElementById('disclaimer-popup').style.display='none'">×</span>
+        <p>This is for Educational purposes only. The official website is <a href="https://vtop.vitbhopal.ac.in/vtop/open/page" target="_blank">vitbhopal.ac.in</a></p>
+    </div>
+
+    <script>
+        // Optional: Show popup only once per session
+        document.addEventListener('DOMContentLoaded', function() {
+            if(!sessionStorage.getItem('disclaimerShown')) {
+                document.getElementById('disclaimer-popup').style.display = 'block';
+                sessionStorage.setItem('disclaimerShown', 'true');
+            }
+        });
+    </script>
+       
+</body>
+</html>

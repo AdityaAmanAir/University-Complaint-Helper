@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="css/PreLogin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="WhiteBackground" style="margin-top: 60px">
+    <nav
+      class="navbar navbar-expand-lg bg-light headerBackgroundColor py-1 fixed-top shadow"
+      id="vtopOpenPageHeader"
+    >
+      <div class="container-fluid justify-content-start">
+        <a
+          class="navbar-brand VITLogoStyle text-light"
+          href="javacript:void(0);"
+          ><span class="h1 fw-bold">VIT</span>
+        </a>
+        <span class="navbar-text text-light">(Bhopal Campus)</span>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div
+          class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-4 WhiteBackground shadow-lg mx-auto p-0 mt-5"
+          id="loginBox"
+        >
+          <div class="card border-0">
+            <div class="card-header loginBoxBorder">
+              <h4 class="">VTOP Login</h4>
+            </div>
+            <div class="card-body" id="bodyContent">
+              <form
+                id="loginForm"
+                name="vtopLoginForm"
+                class="form-signin"
+                method="POST"
+                action="/login.html"
+              >
+                <input type="hidden" name="_csrf" />
+
+                <!-- USERID -->
+
+                <div class="input-group input-group-sm mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Username"
+                    for="username"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                    id="username"
+                    name="username"
+                    maxlength="15"
+                    size="15"
+                    onkeyup="this.value = this.value.toUpperCase()"
+                    autocomplete="off"
+                  />
+                  <span class="input-group-text" id="basic-addon1"
+                    ><i class="fa fa-user text-primary" aria-hidden="true"></i
+                  ></span>
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="input-group input-group-sm mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    placeholder="Password"
+                    for="password"
+                    id="password"
+                    name="password"
+                    aria-describedby="basic-addon2"
+                  />
+                  <button
+                    type="button"
+                    class="btn btn-light border-secondary"
+                    onclick="togglePassword()"
+                  >
+                    <i
+                      class="fa fa-eye text-danger fw-bold"
+                      id="passwordIcon"
+                    ></i>
+                  </button>
+
+                  <script>
+                    function togglePassword() {
+                      const passwordField = document.getElementById("password");
+                      const icon = document.getElementById("passwordIcon");
+
+                      if (passwordField.type === "password") {
+                        passwordField.type = "text";
+                        icon.classList.remove("fa-eye");
+                        icon.classList.add("fa-eye-slash");
+                      } else {
+                        passwordField.type = "password";
+                        icon.classList.remove("fa-eye-slash");
+                        icon.classList.add("fa-eye");
+                      }
+                    }
+                  </script>
+                </div>
+
+                <!-- IN BUILT CAPTCHA  -->
+
+                <!-- SIMPLE TEXT-BASED CAPTCHA -->
+                <div class="row">
+                  <div class="col-7 mx-auto">
+                    <div
+                      class="input-group input-group-sm border mb-3"
+                      id="captchaBlock"
+                    >
+                      <div
+                        id="captchaText"
+                        class="form-control bg-light border-0"
+                        style="
+                          font-family: monospace;
+                          font-size: 24px;
+                          letter-spacing: 5px;
+                          text-align: center;
+                        "
+                      >
+                        <!-- CAPTCHA will appear here -->
+                      </div>
+                      <button
+                        class="btn btn-success"
+                        type="button"
+                        onclick="loadCaptcha()"
+                        id="button-addon2"
+                      >
+                        <i class="fa fa-refresh" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    autocomplete="off"
+                    maxlength="6"
+                    onkeyup="this.value = this.value.toUpperCase()"
+                    id="captchaStr"
+                    name="captchaStr"
+                    placeholder="Enter CAPTCHA shown above"
+                  />
+                </div>
+
+                <script>
+                  // Store the current CAPTCHA text
+                  let currentCaptcha = "";
+
+                  // Generate a random CAPTCHA
+                  function generateCaptcha() {
+                    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // Removed confusing characters
+                    currentCaptcha = "";
+
+                    // Create 6-character code
+                    for (let i = 0; i < 6; i++) {
+                      currentCaptcha += chars.charAt(
+                        Math.floor(Math.random() * chars.length)
+                      );
+                    }
+
+                    // Display it
+                    document.getElementById("captchaText").textContent =
+                      currentCaptcha;
+                  }
+
+                  // Refresh CAPTCHA
+                  function refreshCaptcha() {
+                    generateCaptcha();
+                    document.getElementById("captchaStr").value = ""; // Clear input field
+                  }
+
+                  // Initialize CAPTCHA on page load
+                  window.onload = function () {
+                    generateCaptcha();
+                  };
+
+                  // Form Submission with CAPTCHA Validation
+                  document
+                    .getElementById("loginForm")
+                    .addEventListener("submit", async function (e) {
+                      e.preventDefault();
+
+                      // First validate CAPTCHA
+                      const enteredCaptcha = document
+                        .getElementById("captchaStr")
+                        .value.toUpperCase();
+
+                      if (enteredCaptcha !== currentCaptcha) {
+                        alert("Invalid CAPTCHA! Please try again.");
+                        refreshCaptcha();
+                        return false;
+                      }
+
+                      // If CAPTCHA matches, proceed with login
+                      const username =
+                        document.getElementById("username").value;
+                      const password =
+                        document.getElementById("password").value;
+
+                      try {
+                        const response = await fetch("/login", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ username, password }),
+                        });
+
+                        const data = await response.json();
+
+                        if (data.success) {
+                          // Store user data in sessionStorage
+                          sessionStorage.setItem(
+                            "user",
+                            JSON.stringify(data.user)
+                          );
+                          window.location.href = "/VTOP4.html";
+                        } else {
+                          document.getElementById("message").textContent =
+                            data.error || "Login failed";
+                          refreshCaptcha(); // Refresh CAPTCHA on failed login
+                        }
+                      } catch (error) {
+                        document.getElementById("message").textContent =
+                          "An error occurred during login";
+                        refreshCaptcha(); // Refresh CAPTCHA on error
+                      }
+                    });
+                </script>
+
+                <!-- GOOGLE CAPTCHA  -->
+
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="btn btn-sm btn-primary float-end"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+
+            <div class="card-footer border-0 small">
+              <a class="fw-bold text-decoration-none" href="/register.html"
+                >Forgot Password</a
+              ><br />
+              <a class="fw-bold text-decoration-none" href="/register.html"
+                >Forgot LoginId</a
+              >
+              <div class="text-end">
+                <a class="fw-light fst-italic text-success" href="/index.html"
+                  ><strong><i>Go to Home Page</i></strong></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fixed-bottom text-center text-light py-0 footercolor">
+      <span class="small"
+        >Copyright ©
+        <span class="trim d-none d-sm-inline-block">2025</span> Software
+        Development Cell, VIT, Bhopal-466 114.</span
+      >
+    </div>
+
+    <div class="modal" tabindex="-1" id="sessionTimedOut">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-primary">Sorry !!!</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h3 class="text-danger">Session Timed Out</h3>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquery.blockUI.js"></script>
+    <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.js"></script> -->
+  </body>
+</html>

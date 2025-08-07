@@ -1,0 +1,277 @@
+@charset "ISO-8859-1";
+
+@font-face {
+	font-family: OpenSans;
+	src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+.fg-black {
+	color: rgb(0, 0, 0);
+}
+
+.panel-body {
+	background-color: rgb(255, 255, 255);
+}
+
+.b3ModalLayer {
+	z-index: 30000000;
+}
+
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	min-height: 100vh;
+	overflow: scroll;
+}
+
+html,
+body {
+	font-family: OpenSans;
+	font-size: 14px;
+}
+
+#core-container {
+	overflow: hidden;
+	height: 100vh;
+	margin-top: -100px;
+	padding-top: 100px;
+	position: relative;
+	width: 100%;
+	backface-visibility: hidden;
+	will-change: overflow;
+}
+
+#sidepanel {
+	overflow: auto;
+	height: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.img-circle {
+	border-radius: 50%;
+}
+
+.rounded_corner15 {
+	border-radius: 15%;
+}
+
+body {
+	background-color: rgb(236, 240, 241);
+}
+
+.websiteBackground {
+	background-color: rgb(238, 238, 238);
+	/* background-color: #659DBD; */
+}
+
+.WhiteBackground {
+	background-color: rgb(255, 255, 255);
+}
+
+.goldBackground {
+    background: linear-gradient(90deg, #ccc6ad, #ccc6ab, #ccc5a8, #cdc5a6, #cdc4a4, #cdc4a2, #cec39f, #cec39d);
+}
+
+
+.trim {
+	padding: 0px;
+	margin: 0px;
+}
+
+.trim-h {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.textColor1 {
+	color: rgb(0, 0, 0);
+}
+
+.textColor2 {
+	color: rgb(0, 0, 0);
+}
+
+.primaryColor1 {
+	color: rgb(51, 122, 183);
+}
+
+
+.primaryColor2 {
+	color: rgb(59, 142, 214);
+}
+
+
+.primaryFontStyle {
+	font-family: OpenSans;
+}
+
+.primaryMenuFontStyle {
+	font-family: OpenSans;
+}
+
+.primaryBorderTop {
+	border-width: 3px 0px 0px 0px;
+	border-style: solid;
+	border-color: rgb(92, 172, 218);
+}
+
+.warningBorderTop {
+	border-width: 3px 0px 0px 0px;
+	border-style: solid;
+	border-color: rgb(230, 126, 34);
+}
+
+.successBorderTop {
+	border-width: 3px 0px 0px 0px;
+	border-style: solid;
+	border-color: rgb(82, 190, 128);
+}
+
+.dangerBorderTop {
+	border-width: 3px 0px 0px 0px;
+	border-style: solid;
+	border-color: rgb(192, 57, 43);
+}
+
+.primaryBorderBottom {
+	border-width: 0px 0px 3px 0px;
+	border-style: solid;
+	border-color: rgb(92, 172, 218);
+}
+
+.headerBackgroundColor {
+	background: rgb(36, 85, 163);
+	background: linear-gradient(130deg, rgba(36, 85, 163, 1) 23%, rgba(52, 151, 219, 1) 52%, rgba(52, 142, 219, 1) 58%, rgba(52, 131, 219, 1) 65%, rgba(40, 116, 166, 1) 74%);
+}
+
+.hightlight1 {
+	color: rgb(144, 12, 63);
+}
+
+
+
+.VTopHeaderStyle {
+	color: white;
+	font-weight: bold;
+	font-family: arial;
+}
+
+.SwitchRoleBorder {
+	border-width: 3px 0px 0px 0px;
+	border-style: solid;
+	border-color: rgb(255, 165, 0);
+}
+
+.VITLogoStyle {
+	font-family: Times;
+}
+
+@media screen and (min-width: 768px) {
+	.VITEmblem {
+		width: 40px;
+		height: 40px;
+	}
+
+}
+
+
+/* Responsive Screen Start*/
+@media screen and (max-width: 767px) {
+	.VITEmblem {
+		width: 30px;
+		height: 30px;
+	}
+
+}
+
+
+.img_icon_size {
+	width: 40px;
+	height: 40px;
+}
+
+
+.img_stamp_size {
+	width: 100px;
+	height: 100px;
+}
+
+.trim {
+	padding: 0px;
+	margin: 0px;
+}
+
+/*ul.news-slice {
+		list-style-type: circle;
+		font-family: OpenSans;
+	}*/
+ul.news-slice {
+	list-style-type: circle;
+	font-family: OpenSans;
+	width: 100%;
+}
+
+
+/*.news_card_text {
+		font-family:OpenSans;
+		font-size:12px;
+		font-weight:bold;
+		padding:5px 3px 5px 3px;
+		margin:5px 3px 5px 3px;
+		-webkit-box-shadow: 0px 2px 2px -2px lightblue;
+		-moz-box-shadow: 0px 3px 3px -2px lightblue;
+		box-shadow: 0px 3px 3px -2px lightblue;
+	}*/
+.news_card_text {
+	font-family: OpenSans;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 3px;
+}
+
+
+.info-box-number {
+	font-family: arial;
+	font-size: 15px;
+	font-weight: bold;
+
+}
+
+.info-box {
+	padding: 0px;
+	margin: 0px;
+	border-width: 2px 0px 0px 0px;
+	border-color: orange;
+	border-style: solid;
+	display: inline-block;
+}
+
+.info-box-size {
+	width: 300px;
+}
+
+.noshow {
+	display: none;
+}
+
+.showBlock {
+	display: block;
+}
+
+.content-center {
+	float: none;
+	margin: 0 auto;
+}
+
+
+/* 03.12.18 */
