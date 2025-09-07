@@ -24,9 +24,9 @@ app.post('/register', async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     
     db.run(
-      `INSERT INTO users (username, password, email, full_name) 
+      `INSERT INTO users (username, password, email, full_name, user_type) 
        VALUES (?, ?, ?, ?)`,
-      [username, hashedPassword, email, full_name],
+      [username, hashedPassword, email, full_name, user_type],
       function(err) {
         if (err) {
           return res.status(400).json({ error: err.message });
@@ -63,7 +63,8 @@ app.post('/login', (req, res) => {
           id: user.id,
           username: user.username,
           full_name: user.full_name,
-          role: user.role
+          role: user.role,
+          type: user.user_type
         }
       });
     }

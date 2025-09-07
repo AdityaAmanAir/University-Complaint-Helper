@@ -27,7 +27,34 @@
     
 
 
+<script>
+    // Check if user is logged in
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    
+    if (!user) {
+        window.location.replace('/index.html');
+    }else{
 
+
+        document.getElementById('usernameDisplay').textContent = `${user.username} ${user.user_type} `;
+    }
+    
+    // Logout button
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+        sessionStorage.removeItem('user');
+        // Clear browser cache and prevent back navigation
+        window.location.replace('/index.html');
+    });
+    
+    // Additional protection against back button
+    window.onpopstate = function(event) {
+        const currentUser = JSON.parse(sessionStorage.getItem('user'));
+        if (!currentUser) {
+            window.location.replace('/index.html');
+        }
+    };
+    history.pushState(null, null, window.location.href);
+</script>
 
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -59,7 +86,7 @@
   
   <div id="userInfo"></div>
 
-    <input type="hidden" name="authorizedIDX" id="authorizedIDX" value="24BAI10000">
+    <input type="hidden" name="authorizedIDX" id="authorizedIDX" value=user.username>
 
     <div class="container-fluid">
         <div class="row">
@@ -154,7 +181,7 @@
             window.onload = init;
             // var csrfName = "_csrf";
             // var csrfValue = " ";
-            var id ="24BAI10000";
+            var id =user.username;
             var now = new Date();
             var params = csrfName + "=" + csrfValue + "&authorizedID=" + id + "&x=" + now.toUTCString();
 
@@ -233,7 +260,7 @@
                         </li>
                         <li class="nav-item dropdown d-none d-sm-inline-block">
                             <a class="nav-link dropdown-toggle text-light" href="javascript:void(0);" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="navbar-text text-light small fw-bold">24BAI10000 (STUDENT)</span>
+<span id="usernameDisplay" class="navbar-text text-light small fw-bold">Placeholder (STUDENT)</span>                        </li>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end headerBackgroundColor dropdownMenuBoxWidth" aria-labelledby="navbarDropdown">
                                 <li class="dropdown-item disabled text-center"><img src="rescr/Untitled.png" class="img-circle img_stamp_size" alt="User Image"></li>
@@ -244,7 +271,7 @@
                                 <li class="dropdown-item bg-transparent">
                                     <form class="text-center" ><input type="hidden" name="_csrf" value=" ">
                                         <input type="hidden" name="_csrf" value=" ">
-                                        <input type="hidden" name="authorizedID" id="authorizedID" value="24BAI10000">
+                                        <input type="hidden" name="authorizedID" id="authorizedID" value=user.username>
                                         <div class="d-grid gap-2">
                                             
                                                 <button class="btn btn-sm btn-info" id="historyBtn1" type="button">Login
@@ -262,14 +289,13 @@
                         <li class="nav-item disabled text-center  d-block d-sm-none"><img src="rescr/Untitled.png" class="img-circle img_stamp_size" alt="User Image"></li>
                         <li class="nav-item disabled text-center d-block d-sm-none"><span class="dropdown-item text-light"></span></li>
                         <li class="nav-item disabled text-center d-block d-sm-none">
-                            <span class="navbar-text text-light small fw-bold">24BAI10000 (STUDENT)</span>
-                        </li>
+<span id="usernameDisplay" class="navbar-text text-light small fw-bold">Placeholder (STUDENT)</span>                        </li>
                         <li class="nav-item bg-transparent d-block d-sm-none">
                             <form class="text-center"  >
                                 <!-- name="logoutForm1" method="post" `="" action="/vtop/logout"><input type="hidden" name="_csrf" value=" "> -->
 
                                 <!-- <input type="hidden" name="_csrf" value=" ">
-                                <input type="hidden" name="authorizedID" id="authorizedID" value="24BAI10000"> -->
+                                <input type="hidden" name="authorizedID" id="authorizedID" value=user.username> -->
                                 <div class="d-grid gap-2">
                                     
                                         <button class="btn btn-sm btn-info" id="historyBtn" type="button">Login
@@ -408,7 +434,13 @@
                 
                     <a data-url="controlpanel/ChangePassword" class="dropdown-item menuFontStyle systemB5BtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Change Password</a>
                 
-                    <a data-url="controlpanel/ChangePreferredUser" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Update LoginID</a></div></div>
+                    <a data-url="controlpanel/ChangePreferredUser" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Update LoginID
+                    
+                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-heart iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Complaint Manager </div>
+                
+                    <a data-url="others/bonafide/StudentBonafidePageControl" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Complaint Helper</a>
+                
+                    </a></div></div>
                 
 
             </div>
@@ -898,7 +930,14 @@
             
                 <a data-url="controlpanel/ChangePassword" class="dropdown-item menuFontStyle textColor2 systemB5MainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Change Password</a>
             
-                <a data-url="controlpanel/ChangePreferredUser" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Update LoginID</a></div></div></div></div>
+                <a data-url="controlpanel/ChangePreferredUser" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Update LoginID</a>
+            
+            </div></div></div><div class="accordion-item border-0"><div class="accordion-header" id="acMenuItemHDG0008"><button class="accordion-button collapsed py-2 ps-3 menuFontStyle bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#acMenuCollapseHDG1111" aria-expanded="false" aria-controls="#acMenuCollapseHDG1111"> <i class="fa fa-info iconSpaceHeader "></i><span class="ps-0 ms-0 fw-bold textColor1">  New Support System </span></button></div><div id="acMenuCollapseHDG1111" class="accordion-collapse collapse" aria-labelledby="acMenuItemHDG1111" data-bs-parent="#accordianMenuHead_1001"><div class="accordion-body py-0">
+            
+                <a data-url="others/bonafide/StudentBonafidePageControl" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Complaint Helper</a>
+          
+            
+            </div></div></div></div>
 
 
         <!-- <script>
@@ -1050,7 +1089,7 @@
             function showHistory() {
                 let csrfName = "_csrf";
                 let csrfValue = " ";
-                let id ="24BAI10000";
+                let id =user.username;
                 let params = "authorizedID=" + id + "&" + csrfName + "=" + csrfValue + "&x=" + now.toUTCString();
                 ajaxB5Call("show/login/history", params, "b5-pagewrapper");
                 historyBtn1.addEventListener("click", showHistory);
@@ -1061,7 +1100,7 @@
                 var params = null;
                 var csrfName = "_csrf";
                 var csrfValue = " ";
-                var id ="24BAI10000";
+                var id =user.username;
                 var now = new Date();
                 if (dataToSend === 'null' || dataToSend === undefined || dataToSend === null || dataToSend === '') {
                     params = "authorizedID=" + id + "&" + csrfName + "=" + csrfValue + "&x=" + now.toUTCString();
@@ -1438,30 +1477,7 @@
             /*]]>*/
         </script> -->
 
-<script>
-    // Check if user is logged in
-    const user = JSON.parse(sessionStorage.getItem('user'));
-    
-    if (!user) {
-        window.location.replace('/index.html');
-    }
-    
-    // Logout button
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-        sessionStorage.removeItem('user');
-        // Clear browser cache and prevent back navigation
-        window.location.replace('/index.html');
-    });
-    
-    // Additional protection against back button
-    window.onpopstate = function(event) {
-        const currentUser = JSON.parse(sessionStorage.getItem('user'));
-        if (!currentUser) {
-            window.location.replace('/index.html');
-        }
-    };
-    history.pushState(null, null, window.location.href);
-</script>
+
        
     
 
