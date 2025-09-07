@@ -7,7 +7,7 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     
 
-        <meta charset="utf-8">
+         <meta charset="utf-8">
         
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>VIT Bhopal - VTOP</title>
@@ -24,38 +24,7 @@
         <meta http-equiv="expires" content="0">
         <meta http-equiv="X-UA-Compatible" content="IE-Edge">
     
-    
-
-
-<script>
-    // Check if user is logged in
-    const user = JSON.parse(sessionStorage.getItem('user'));
-    
-    if (!user) {
-        window.location.replace('/index.html');
-    }else{
-
-
-        document.getElementById('usernameDisplay').textContent = `${user.username} ${user.user_type} `;
-    }
-    
-    // Logout button
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-        sessionStorage.removeItem('user');
-        // Clear browser cache and prevent back navigation
-        window.location.replace('/index.html');
-    });
-    
-    // Additional protection against back button
-    window.onpopstate = function(event) {
-        const currentUser = JSON.parse(sessionStorage.getItem('user'));
-        if (!currentUser) {
-            window.location.replace('/index.html');
-        }
-    };
-    history.pushState(null, null, window.location.href);
-</script>
-
+        
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -82,16 +51,11 @@
 
 <body class="overflow-auto" style="padding-top: 51px;">
 
-    
-  
-  <div id="userInfo"></div>
-
-    <input type="hidden" name="authorizedIDX" id="authorizedIDX" value=user.username>
+    <input type="hidden" name="authorizedIDX" id="authorizedIDX" value=UserRegNo>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12  trim vh-100 vw-100 " id="page_outline">
-                
                     <div id="page-holder">
                         
         <script>
@@ -177,21 +141,21 @@
 
 
             
-            // Initialize on page load
-            window.onload = init;
-            // var csrfName = "_csrf";
-            // var csrfValue = " ";
-            var id =user.username;
+            // // Initialize on page load
+            // window.onload = init;
+            // //var csrfName = "_csrf";
+            // //var csrfValue = "   ";
+            var id =UserRegNo;
             var now = new Date();
             var params = csrfName + "=" + csrfValue + "&authorizedID=" + id + "&x=" + now.toUTCString();
 
             // function home() {
-            //     ajaxCall("/vtop/home", params, "page_outline");
+            //     ajaxCall("/VTOP4.html", params, "page_outline");
             // }
 
             /*]]>*/
         </script>
-        <nav class="navbar navbar-expand-lg py-0 navbar-light bg-light headerBackgroundColor fixed-top shadow" id="vtopHeader" style="">
+        <nav class="navbar navbar-expand-lg py-0 navbar-light bg-light headerBackgroundColor fixed-top shadow" id="vtopHeader">
             <div class="container-fluid ms-0 ps-2">
                 <button class="btn btn-sm bg-transparent d-none d-sm-block ms-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#expandedSideBar" aria-controls="offcanvasExample">
                     <span class="text-light h4">☰ </span>
@@ -246,13 +210,13 @@
     
                                 </ul>
                             </div>
-                            <!-- <script type="text/javascript" src="js/favourite.js"></script> -->
+                            <!-- <script type="text/javascript" src="VIT%20Bhopal%20-%20VTOP_files/favourite.js"></script> -->
                             
                         
                     </div>
                     <strong class="mx-auto fw-bold text-light bg-danger"></strong>
 
-                        <div id="countdownDisplay"><span style="font-weight: bold; color: white; font-size: 13px;">Session Time :  </span><span style="font-weight: bold; color: white; font-size: 13px;">18m 57s</span></div>            
+                        <div id="countdownDisplay"></div>            
                         
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item d-none d-sm-inline-block">
@@ -260,7 +224,7 @@
                         </li>
                         <li class="nav-item dropdown d-none d-sm-inline-block">
                             <a class="nav-link dropdown-toggle text-light" href="javascript:void(0);" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-<span id="usernameDisplay" class="navbar-text text-light small fw-bold">Placeholder (STUDENT)</span>                        </li>
+                                <span class="navbar-text text-light small fw-bold">UserRegNo (STUDENT)</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end headerBackgroundColor dropdownMenuBoxWidth" aria-labelledby="navbarDropdown">
                                 <li class="dropdown-item disabled text-center"><img src="rescr/Untitled.png" class="img-circle img_stamp_size" alt="User Image"></li>
@@ -271,7 +235,7 @@
                                 <li class="dropdown-item bg-transparent">
                                     <form class="text-center" ><input type="hidden" name="_csrf" value=" ">
                                         <input type="hidden" name="_csrf" value=" ">
-                                        <input type="hidden" name="authorizedID" id="authorizedID" value=user.username>
+                                        <input type="hidden" name="authorizedID" id="authorizedID" value=UserRegNo>
                                         <div class="d-grid gap-2">
                                             
                                                 <button class="btn btn-sm btn-info" id="historyBtn1" type="button">Login
@@ -289,13 +253,14 @@
                         <li class="nav-item disabled text-center  d-block d-sm-none"><img src="rescr/Untitled.png" class="img-circle img_stamp_size" alt="User Image"></li>
                         <li class="nav-item disabled text-center d-block d-sm-none"><span class="dropdown-item text-light"></span></li>
                         <li class="nav-item disabled text-center d-block d-sm-none">
-<span id="usernameDisplay" class="navbar-text text-light small fw-bold">Placeholder (STUDENT)</span>                        </li>
+                            <span class="navbar-text text-light small fw-bold">UserRegNo (STUDENT)</span>
+                        </li>
                         <li class="nav-item bg-transparent d-block d-sm-none">
                             <form class="text-center"  >
                                 <!-- name="logoutForm1" method="post" `="" action="/vtop/logout"><input type="hidden" name="_csrf" value=" "> -->
 
                                 <!-- <input type="hidden" name="_csrf" value=" ">
-                                <input type="hidden" name="authorizedID" id="authorizedID" value=user.username> -->
+                                <input type="hidden" name="authorizedID" id="authorizedID" value=userRegNo> -->
                                 <div class="d-grid gap-2">
                                     
                                         <button class="btn btn-sm btn-info" id="historyBtn" type="button">Login
@@ -309,7 +274,7 @@
                 </div>
             </div>
         </nav>
-        <!-- <script type="text/javascript" src="js/vtopheader.js"></script> -->
+        <!-- <script type="text/javascript" src="VIT%20Bhopal%20-%20VTOP_files/vtopheader.js"></script> -->
     
                         
                             <div class="hstack">
@@ -365,6 +330,28 @@
                     <a data-url="academics/common/QCMStudentLogin" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> QCM View</a>
                 
                     <a data-url="academics/common/CalendarPreview" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Academics Calendar</a>
+                
+                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-bank iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Research </div>
+                
+                    <a data-url="research/researchProfile" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> My Research Profile</a>
+                
+                    <a data-url="admissions/semTransactionPageControllerGeneral" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> SEM Request</a>
+                
+                    <a data-url="research/CourseworkRegistration" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Course Work Registration</a>
+                
+                    <a data-url="research/CourseworkRegistrationViewtoScholar" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Registration Status</a>
+                
+                    <a data-url="research/scholarsMeetingView" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Meeting info</a>
+                
+                    <a data-url="research/scholarsAttendanceView" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Attendance view</a>
+                
+                    <a data-url="research/scholar/leave/request" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> ScholarLeave Request</a>
+                
+                    <a data-url="research/researchLettersStudentView" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text iconSpace "></i> Research Letters</a>
+                
+                    <a data-url="research/thesisSubmission" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Electronic Thesis Submission</a>
+                
+                    <a data-url="research/researchDocumentUpload" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Research Document Upload</a>
                 
                     </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-book iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Examination </div>
                 
@@ -434,13 +421,11 @@
                 
                     <a data-url="controlpanel/ChangePassword" class="dropdown-item menuFontStyle systemB5BtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Change Password</a>
                 
-                    <a data-url="controlpanel/ChangePreferredUser" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Update LoginID
+                    <a data-url="controlpanel/ChangePreferredUser" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Update LoginID</a>
                     
                     </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-heart iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Complaint Manager </div>
                 
-                    <a data-url="others/bonafide/StudentBonafidePageControl" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Complaint Helper</a>
-                
-                    </a></div></div>
+                    <a data-url="others/bonafide/StudentBonafidePageControl" class="dropdown-item menuFontStyle systemBtnMenu " href="/public/chat.html">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Complaint Helper</a></div></div>
                 
 
             </div>
@@ -462,7 +447,7 @@
             function assembleData() {
                 var authorizedID = $("#authorizedIDX").val();
                 let csrfName = "_csrf";
-                let csrfValue = " ";
+                let csrfValue = "    ";
                 var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+ csrfName + '=' + csrfValue+"&nocache=@(new Date().getTime())"
                 let url = this.dataset.url;
                 ajaxCall(url, dataText);
@@ -478,7 +463,7 @@
             function assembleDataForB5() {
                 var authorizedID = $("#authorizedIDX").val();
                 let csrfName = "_csrf";
-                let csrfValue = " ";
+                let csrfValue = "    ";
                 var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+ csrfName + '=' + csrfValue+"&nocache=@(new Date().getTime())"
                 let url = this.dataset.url;
                 ajaxB5Call(url, dataText);
@@ -528,7 +513,67 @@
 								<div class="col-sm-3">
 							<div class="d-flex flex-column">
 								
-									
+									<div>
+										<button class="btn btn-sm btn-info fw-bold position-relative mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#spotlightAcad" aria-controls="#spotlightAcad">
+											<span>Academics</span>
+											<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+												<span class="text-light">3</span>
+												<span class="visually-hidden">unread messages</span>
+											</span>
+										</button>
+										
+
+		<ul class="list-group list-group-flush text-start  spotlight-background">
+			<li class="list-group-item py-1">
+				<div class="d-flex w-100 align-items-stretch justify-content-start">
+					<div class="hightlight1 px-3 ">
+						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+					</div>
+					<div class=" w-75 py-0">
+						
+						
+
+						<a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/58');">
+							<span class="fg-black">Senior Batches UG Academic Calendar 2025-26</span> </a>
+
+					</div>
+				</div>
+			</li>
+			<li class="list-group-item py-1">
+				<div class="d-flex w-100 align-items-stretch justify-content-start">
+					<div class="hightlight1 px-3 ">
+						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+					</div>
+					<div class=" w-75 py-0">
+						
+						
+
+						<a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/57');">
+							<span class="fg-black">2025 Batch PG Academic Calendar 2025-26</span> </a>
+
+					</div>
+				</div>
+			</li>
+			<li class="list-group-item py-1">
+				<div class="d-flex w-100 align-items-stretch justify-content-start">
+					<div class="hightlight1 px-3 ">
+						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+					</div>
+					<div class=" w-75 py-0">
+						
+						
+
+						<a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/56');">
+							<span class="fg-black">2025 Batch UG Academic Calendar 2025-26</span> </a>
+
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	
+
+									</div>
 								
 									
 								
@@ -564,9 +609,9 @@
 
 
     <meta charset="ISO-8859-1">
-    <!-- <script type="text/javascript" src="js/ChartLoader.js"></script> -->
-	<link rel="stylesheet" href="css/datatables.min.css">
-	<!-- <script type="text/javascript" src="js/datatables.min.js"></script> -->
+    <!-- <script type="text/javascript" src="VIT%20Bhopal%20-%20VTOP_files/ChartLoader.js"></script> -->
+    <link rel="stylesheet" href="css/datatables.min.css">
+	<!-- <script type="text/javascript" src="VIT%20Bhopal%20-%20VTOP_files/datatables.min.js"></script> -->
     <style>
         /* Define a unique background color for the table header */
         #eventsTable thead {
@@ -660,7 +705,51 @@
 					
 		
 		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
+			<li class="list-group-item py-0 text-dark">
+				<div class="d-flex w-100 align-items-stretch justify-content-start">
+					<div class="hightlight1 px-3 ">
+						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+					</div>
+					<div class="w-75 py-0">
+						
+						
+
+						<a class="list-group-item-action text-decoration-none" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/58');">
+							<span class="">Senior Batches UG Academic Calendar 2025-26</span> </a>
+
+					</div>
+				</div>
+			</li>
+			<li class="list-group-item py-0 text-dark">
+				<div class="d-flex w-100 align-items-stretch justify-content-start">
+					<div class="hightlight1 px-3 ">
+						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+					</div>
+					<div class="w-75 py-0">
+						
+						
+
+						<a class="list-group-item-action text-decoration-none" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/57');">
+							<span class="">2025 Batch PG Academic Calendar 2025-26</span> </a>
+
+					</div>
+				</div>
+			</li>
+			<li class="list-group-item py-0 text-dark">
+				<div class="d-flex w-100 align-items-stretch justify-content-start">
+					<div class="hightlight1 px-3 ">
+						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+					</div>
+					<div class="w-75 py-0">
+						
+						
+
+						<a class="list-group-item-action text-decoration-none" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/56');">
+							<span class="">2025 Batch UG Academic Calendar 2025-26</span> </a>
+
+					</div>
+				</div>
+			</li>
 		</ul>
 
 	
@@ -804,7 +893,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="offcanvas offcanvas-start" tabindex="-1" id="expandedSideBar" aria-labelledby="expandedSideBarLabel" style="visibility: hidden;" aria-hidden="true">
+                            <div class="offcanvas offcanvas-start" tabindex="-1" id="expandedSideBar" aria-labelledby="expandedSideBarLabel">
                                 <div class="offcanvas-header headerBackgroundColor text-light">
                                     <h5 class="offcanvas-title" id="expandedSideBarLabel">VTOP Menu</h5>
                                     <button type="button" class="text-reset bg-transparent border-0 h4" data-bs-dismiss="offcanvas" aria-label="Close">☰</button>
@@ -863,6 +952,28 @@
                 <a data-url="academics/common/QCMStudentLogin" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> QCM View</a>
             
                 <a data-url="academics/common/CalendarPreview" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Academics Calendar</a>
+            
+                </div></div></div><div class="accordion-item border-0"><div class="accordion-header" id="acMenuItemHDG0062"><button class="accordion-button collapsed py-2 ps-3 menuFontStyle bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#acMenuCollapseHDG0062" aria-expanded="false" aria-controls="acMenuCollapseHDG0062"> <i class="fa fa-bank iconSpaceHeader "></i><span class="ps-0 ms-0 fw-bold textColor1">  Research </span></button></div><div id="acMenuCollapseHDG0062" class="accordion-collapse collapse" aria-labelledby="acMenuItemHDG0062" data-bs-parent="#accordianMenuHead_1001"><div class="accordion-body py-0">
+            
+                <a data-url="research/researchProfile" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> My Research Profile</a>
+            
+                <a data-url="admissions/semTransactionPageControllerGeneral" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> SEM Request</a>
+            
+                <a data-url="research/CourseworkRegistration" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Course Work Registration</a>
+            
+                <a data-url="research/CourseworkRegistrationViewtoScholar" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Registration Status</a>
+            
+                <a data-url="research/scholarsMeetingView" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Meeting info</a>
+            
+                <a data-url="research/scholarsAttendanceView" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Attendance view</a>
+            
+                <a data-url="research/scholar/leave/request" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> ScholarLeave Request</a>
+            
+                <a data-url="research/researchLettersStudentView" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-file-text iconSpace "></i> Research Letters</a>
+            
+                <a data-url="research/thesisSubmission" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Electronic Thesis Submission</a>
+            
+                <a data-url="research/researchDocumentUpload" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Research Document Upload</a>
             
                 </div></div></div><div class="accordion-item border-0"><div class="accordion-header" id="acMenuItemHDG0070"><button class="accordion-button collapsed py-2 ps-3 menuFontStyle bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#acMenuCollapseHDG0070" aria-expanded="false" aria-controls="acMenuCollapseHDG0070"> <i class="fa fa-book iconSpaceHeader "></i><span class="ps-0 ms-0 fw-bold textColor1">  Examination </span></button></div><div id="acMenuCollapseHDG0070" class="accordion-collapse collapse" aria-labelledby="acMenuItemHDG0070" data-bs-parent="#accordianMenuHead_1001"><div class="accordion-body py-0">
             
@@ -931,13 +1042,12 @@
                 <a data-url="controlpanel/ChangePassword" class="dropdown-item menuFontStyle textColor2 systemB5MainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Change Password</a>
             
                 <a data-url="controlpanel/ChangePreferredUser" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-lock iconSpace "></i> Update LoginID</a>
+                </div></div></div><div class="accordion-item border-0"><div class="accordion-header" id="acMenuItemHDG0008"><button class="accordion-button collapsed py-2 ps-3 menuFontStyle bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#acMenuCollapseHDG1111" aria-expanded="false" aria-controls="#acMenuCollapseHDG1111"> <i class="fa fa-heart iconSpaceHeader "></i><span class="ps-0 ms-0 fw-bold textColor1">  New Support System </span></button></div><div id="acMenuCollapseHDG1111" class="accordion-collapse collapse" aria-labelledby="acMenuItemHDG1111" data-bs-parent="#accordianMenuHead_1001"><div class="accordion-body py-0">
             
-            </div></div></div><div class="accordion-item border-0"><div class="accordion-header" id="acMenuItemHDG0008"><button class="accordion-button collapsed py-2 ps-3 menuFontStyle bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#acMenuCollapseHDG1111" aria-expanded="false" aria-controls="#acMenuCollapseHDG1111"> <i class="fa fa-info iconSpaceHeader "></i><span class="ps-0 ms-0 fw-bold textColor1">  New Support System </span></button></div><div id="acMenuCollapseHDG1111" class="accordion-collapse collapse" aria-labelledby="acMenuItemHDG1111" data-bs-parent="#accordianMenuHead_1001"><div class="accordion-body py-0">
+                <a data-url="others/bonafide/StudentBonafidePageControl" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="/public/chat.html">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Complaint Helper</a></div></div></div></div>
             
-                <a data-url="others/bonafide/StudentBonafidePageControl" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Complaint Helper</a>
-          
-            
-            </div></div></div></div>
+
+        
 
 
         <!-- <script>
@@ -956,7 +1066,7 @@
             function assembleData() {
                 var authorizedID = $("#authorizedIDX").val();
                 let csrfName = "_csrf";
-                let csrfValue = " ";
+                let csrfValue = "    ";
                 var dataText = "verifyMenu=true&authorizedID=" + authorizedID + "&" + csrfName + '=' + csrfValue + "&nocache=@(new Date().getTime())"
                 let url = this.dataset.url;
                 ajaxCall(url, dataText);
@@ -965,7 +1075,7 @@
             function assembleDataForB5() {
                 var authorizedID = $("#authorizedIDX").val();
                 let csrfName = "_csrf";
-                let csrfValue = " ";
+                let csrfValue = "    ";
                 var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+ csrfName + '=' + csrfValue+"&nocache=@(new Date().getTime())"
                 let url = this.dataset.url;
                 ajaxB5Call(url, dataText);
@@ -979,9 +1089,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <script type="text/javascript" src="js/menu.js"></script> -->
+                            <!-- <script type="text/javascript" src="VIT%20Bhopal%20-%20VTOP_files/menu.js"></script> -->
                         
                     </div>
+
+                    
+                    
 
         <div class="row noshow" id="popup">
             <div class="col-12">
@@ -990,14 +1103,24 @@
                         <span class="h6 fw-bold">Loading... Please Wait</span>
                     </div>
                     <div class="card-body">
-                        <img src="rescr/ajax-loader_bert.gif" class="img-fluid">
+                        <img src= "rescr/ajax-loader_bert.gif" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     
-                
+                <div class="row noshow" id="popup" style="cursor: default;">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="h6 fw-bold">Loading... Please Wait</span>
+                    </div>
+                    <div class="card-body">
+                        <img src= "rescr/ajax-loader_bert.gif" class="img-fluid">
+                    </div>
+                </div>
             </div>
+        </div></div>
         </div>
         <div class="row">
             <div class="col-12" id="messageBox">
@@ -1045,10 +1168,10 @@
         </div>
 
 
-        <!-- <script type="text/javascript" src="js/moment.js"></script> 
-        <script type="text/javascript" src="js/jquery.hotkeys.js"></script> 
-        <script type="text/javascript" src="js/jquery.blockUI.js"></script> 
-        <script type="text/javascript" src="js/jquery-ui.js"></script>  -->
+        <!-- <script type="text/javascript" src="js/moment.js"></script>  -->
+        <!-- <script type="text/javascript" src="js/jquery.hotkeys.js"></script>  -->
+        <!-- <script type="text/javascript" src="js/jquery.blockUI.js"></script>  -->
+        <!-- <script type="text/javascript" src="js/jquery-ui.js"></script>  -->
         <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script> 
         <script type="text/javascript" src="js/bootstrapValidator.js"></script> 
         <!-- <script type="text/javascript" src="js/vit-custom.js"></script>
@@ -1058,9 +1181,9 @@
         <script type="text/javascript" src="js/CustomTimePicker.js"></script>
         <script type="text/javascript" src="js/multiselect.js"></script>
         <script type="text/javascript" src="js/CustomMonthYearPicker.js"></script>
-        <script type="text/javascript" src="js/PostDownload.js"></script> 
-        <script type="text/javascript" src="js/custom-bootstrap.js"></script>
-        <script type="text/javascript" src="js/vtop-validation.js"></script>
+        <script type="text/javascript" src="js/PostDownload.js"></script>  -->
+        <!-- <script type="text/javascript" src="js/custom-bootstrap.js"></script> -->
+        <!-- <script type="text/javascript" src="js/vtop-validation.js"></script>
         <script type="text/javascript" src="js/validate2.js"></script>
         <script type="text/javascript" src="js/app.js"></script> -->
 
@@ -1088,8 +1211,8 @@
 
             function showHistory() {
                 let csrfName = "_csrf";
-                let csrfValue = " ";
-                let id =user.username;
+                let csrfValue = "    ";
+                let id =UserRegNo;
                 let params = "authorizedID=" + id + "&" + csrfName + "=" + csrfValue + "&x=" + now.toUTCString();
                 ajaxB5Call("show/login/history", params, "b5-pagewrapper");
                 historyBtn1.addEventListener("click", showHistory);
@@ -1099,8 +1222,8 @@
 
                 var params = null;
                 var csrfName = "_csrf";
-                var csrfValue = " ";
-                var id =user.username;
+                var csrfValue = "    ";
+                var id =UserRegNo;
                 var now = new Date();
                 if (dataToSend === 'null' || dataToSend === undefined || dataToSend === null || dataToSend === '') {
                     params = "authorizedID=" + id + "&" + csrfName + "=" + csrfValue + "&x=" + now.toUTCString();
@@ -1126,14 +1249,14 @@
     
 
 
-        <div class="modal fade" id="confirmBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal fade" id="confirmBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" style="display: none;" aria-hidden="true">
 
-            <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable " id="confirmModal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable undefined" id="confirmModal">
                 <div class="modal-content">
 
-                    <div class="modal-header py-1" id="boxHeader">
+                    <div class="modal-header py-1 bg-info text-light" id="boxHeader">
 
-                        <span class="modal-title text-light fs-5" id="boxTitle">Please Note !!!</span>
+                        <span class="modal-title text-light fs-5" id="boxTitle">Confirm</span>
                         <button type="button" class="btn-close text-light" data-bs-dismiss="modal" id="clsBtn" aria-label="Close"></button>
 
                     </div>
@@ -1142,24 +1265,24 @@
 
                         <div class="d-flex flex-column w-auto">
                             <div class="mx-auto">
-                                <img src="rescr/ajax-loader_bert.gif" id="progressGIF" class="img-fluid">
+                                <img src=    "rescr/ajax-loader_bert.gif" id="progressGIF" class="img-fluid">
                             </div>
                             <div id="confrimTextArea" class="d-flex">
                                 <div class="mx-2">
-                                    <i id="tickIcon" class="bi bi-check2-circle fs-1 text-success fw-bold"></i>
-                                    <i id="errorIcon" class="bi bi-x-octagon fs-1 text-danger fw-bold"></i>
+                                    <i id="tickIcon" class="bi bi-check2-circle fs-1 text-success fw-bold d-none"></i>
+                                    <i id="errorIcon" class="bi bi-x-octagon fs-1 text-danger fw-bold d-none"></i>
                                 </div>
-                                <span id="boxMessage" class="align-self-center"></span>
+                                <span id="boxMessage" class="align-self-center text-danger fw-bold d-none">Are you Sure ?</span>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="modal-footer py-1 d-flex" id="boxFooter">
+                    <div class="modal-footer py-1 d-flex bg-light text-dark" id="boxFooter">
 
                         <div class="d-grid gap-2 d-md-flex justify-content-end">
-                            <button class="btn btn-sm btn-danger me-md-2" id="cancelButton" data-callback="" type="button"></button>
-                            <button class="btn btn-sm btn-success" id="confirmButton" type="button"></button>
+                            <button class="btn btn-sm btn-danger me-md-2 invisible disabled" id="cancelButton" data-callback="" type="button">No</button>
+                            <button class="btn btn-sm btn-success invisible disabled" id="confirmButton" type="button">Yes</button>
                             <button type="button" id="okButton" data-bs-dismiss="modal" class="btn btn-sm btn-danger invisible disabled" aria-label="Close">Ok</button>
                         </div>
 
@@ -1480,6 +1603,70 @@
 
        
     
+
+
+<div class="sweet-overlay" tabindex="-1" style="opacity: -0.02; display: none;"></div><div class="sweet-alert hideSweetAlert" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="false" data-animation="pop" data-timer="null" style="display: none; margin-top: -180px; opacity: -0.02;"><div class="sa-icon sa-error" style="display: block;">
+      <span class="sa-x-mark">
+        <span class="sa-line sa-left"></span>
+        <span class="sa-line sa-right"></span>
+      </span>
+    </div><div class="sa-icon sa-warning" style="display: none;">
+      <span class="sa-body"></span>
+      <span class="sa-dot"></span>
+    </div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success" style="display: none;">
+      <span class="sa-line sa-tip"></span>
+      <span class="sa-line sa-long"></span>
+
+      <div class="sa-placeholder"></div>
+      <div class="sa-fix"></div>
+    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Activity Not Permitted, Contact O/o CoE</h2>
+    <p></p>
+    <fieldset>
+      <input type="text" tabindex="3" placeholder="">
+      <div class="sa-input-error"></div>
+    </fieldset><div class="sa-error-container">
+      <div class="icon">!</div>
+      <p>Not valid!</p>
+    </div><div class="sa-button-container">
+      <button class="cancel" tabindex="2" style="display: none; box-shadow: none;">Cancel</button>
+      <div class="sa-confirm-button-container">
+        <button class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">OK</button><div class="la-ball-fall">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div></div>
+
+<script>
+            // Check if user is logged in
+            const user = JSON.parse(sessionStorage.getItem('user'));
+            
+            if (!user) {
+                window.location.replace('/index.html');
+            }else{
+
+            }
+            
+            // Logout button
+            document.getElementById('logoutBtn').addEventListener('click', () => {
+                sessionStorage.removeItem('user');
+                // Clear browser cache and prevent back navigation
+                window.location.replace('/index.html');
+            });
+            
+            // Additional protection against back button
+            window.onpopstate = function(event) {
+                const currentUser = JSON.parse(sessionStorage.getItem('user'));
+                if (!currentUser) {
+                    window.location.replace('/index.html');
+                }
+            };
+            history.pushState(null, null, window.location.href);
+        </script>
+
+
+
 
 
 </body></html>
