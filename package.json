@@ -13,6 +13,16 @@
     "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
+    "express-session": "^1.18.2",
     "sqlite3": "^5.1.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdityaAmanAir/University-Complaint-Helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AdityaAmanAir/University-Complaint-Helper/issues"
+  },
+  "homepage": "https://github.com/AdityaAmanAir/University-Complaint-Helper#readme"
 }

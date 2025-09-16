@@ -45,8 +45,7 @@
        
 
         <!-- <script type="text/javascript" src="js/jquery.js"></script> -->
-
-    
+  
 </head>
 
 <body class="overflow-auto" style="padding-top: 51px;">
@@ -56,6 +55,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12  trim vh-100 vw-100 " id="page_outline">
+                
                     <div id="page-holder">
                         
         <script>
@@ -76,14 +76,14 @@
             function showTimeoutAlert() {
                 alert("Your session has expired due to inactivity. Please log in again."); // Show alert
                 // Redirect to login page or perform any other action
-                window.location.href = "/index";
+                window.location.href = "/index.html";
             }
             
             
 
             function showTimeoutAlert() {
                 alert("Your session has expired due to inactivity. Please log in again.");
-                window.location.href = "/index";
+                window.location.href = "/index.html";
               return false ;
             }
 
@@ -155,7 +155,6 @@
 
             /*]]>*/
         </script>
-        
         <nav class="navbar navbar-expand-lg py-0 navbar-light bg-light headerBackgroundColor fixed-top shadow" id="vtopHeader">
             <div class="container-fluid ms-0 ps-2">
                 <button class="btn btn-sm bg-transparent d-none d-sm-block ms-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#expandedSideBar" aria-controls="offcanvasExample">
@@ -165,7 +164,7 @@
                     <span class="text-light h4">☰ </span>
                 </button>
                 <!-- <a class="navbar-brand px-0 pe-sm-1 mx-0 mx-sm-1" href="javacript:void(0);">
-                    <img th:src="@{/assets/img/VITLogoEmblem.png}" class="img-responsive VITEmblem" alt="" />
+                    <img th:src="@{/assets/img/VITLogoEmblem}" class="img-responsive VITEmblem" alt="" />
                 </a> -->
                 <a class="navbar-brand VITLogoStyle px-0 mx-0 text-light" href="javacript:void(0);"><span class="h1 fw-bold">VIT</span>
                 </a>
@@ -217,7 +216,7 @@
                     </div>
                     <strong class="mx-auto fw-bold text-light bg-danger"></strong>
 
-                        <div id="countdownDisplay"></div>            
+                        <div id="countdownDisplay"><span style="font-weight: bold; color: white; font-size: 13px;">Session Time :  </span><span style="font-weight: bold; color: white; font-size: 13px;">19m 40s</span></div>            
                         
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item d-none d-sm-inline-block">
@@ -286,9 +285,9 @@
             <div class="btn-group-vertical" role="group" aria-label="First group">
 
                 
-                    <div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-phone-square iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><a data-url="hrms/contactDetails" class="dropdown-item menuFontStyle systemB5BtnMenu *backColor*" href="/VITcontact.html"><i class="fa fa-phone-square iconSpace "></i> Contact Us</a></div></div>
+                    <div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-phone-square iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown" style=""><a data-url="hrms/contactDetails" class="dropdown-item menuFontStyle systemB5BtnMenu *backColor*" href="/VITcontact.html"><i class="fa fa-phone-square iconSpace "></i> Contact Us</a></div></div>
                 
-                    <div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-briefcase iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> My Info </div>
+                    <div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-briefcase iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown" style=""><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> My Info </div>
                 
                     <a data-url="studentsRecord/StudentProfileAllView" class="dropdown-item menuFontStyle systemBtnMenu " href="/VITcontact.html">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Profile</a>
                 
@@ -300,21 +299,21 @@
                 
                     <a data-url="apaarid/upload" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> AAPAR ID Upload</a>
                 
-                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-info-circle iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Info Corner </div>
+                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-info-circle iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown" style=""><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Info Corner </div>
                 
                     <a data-url="academics/common/FaqPreview" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> FAQ</a>
                 
-                    <a data-url="spotlight/spotlightViewOld" class="dropdown-item menuFontStyle systemBtnMenu " href="/VITspot.html">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Spotlight</a>
+                    <a data-url="spotlight/spotlightViewOld" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Spotlight</a>
                 
                     <a data-url="admissions/costCentreCircularsViewPageController" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> General</a>
                 
-                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-paw iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Proctor </div>
+                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-paw iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown" style=""><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Proctor </div>
                 
                     <a data-url="proctor/viewProctorDetails" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Proctor Details</a>
                 
                     <a data-url="proctor/viewMessagesSendByProctor" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Proctor Message</a>
                 
-                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-graduation-cap iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Academics </div>
+                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-graduation-cap iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown" style=""><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Academics </div>
                 
                     <a data-url="hrms/employeeSearchForStudent" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Faculty Info</a>
                 
@@ -332,7 +331,7 @@
                 
                     <a data-url="academics/common/CalendarPreview" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Academics Calendar</a>
                 
-                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-bank iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Research </div>
+                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-bank iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown" style=""><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Research </div>
                 
                     <a data-url="research/researchProfile" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> My Research Profile</a>
                 
@@ -354,7 +353,7 @@
                 
                     <a data-url="research/researchDocumentUpload" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Research Document Upload</a>
                 
-                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-book iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Examination </div>
+                    </div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-book iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown" style=""><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Examination </div>
                 
                     <a data-url="examinations/StudExamSchedule" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Exam Schedule</a>
                 
@@ -386,7 +385,7 @@
                 
                     </div></div></div></div></div></div></div><a data-url="examinations/reFAT/StudentReFATRequestPageController" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Re-Exam Application</a>
                 
-                    </div></div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-space-shuttle iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown"><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Services </div>
+                    </div></div></div><div class="btn-group dropend"><button type="button" class="btn btn-outline-primary p-1 border-0 text-dark SideBarMenuBtn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false"><i class="fa fa-space-shuttle iconSpace"></i></button><div class="dropdown-menu border-0 py-0 shadow-lg dropdownMenuBoxWidth text-nowrap SideBarMenuDropDown" style=""><div class="fw-bold h6 py-3 text-center menuHeaderColor menuHeaderFontStyle"> Services </div>
                 
                     <a data-url="alumni/alumniTranscriptPageControl" class="dropdown-item menuFontStyle systemBtnMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Transcript Request</a>
                 
@@ -447,9 +446,9 @@
 
             function assembleData() {
                 var authorizedID = $("#authorizedIDX").val();
-                let csrfName = "_csrf";
-                let csrfValue = "    ";
-                var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+ csrfName + '=' + csrfValue+"&nocache=@(new Date().getTime())"
+                let  ccssrrffName = "_ ccssrrff"; //csrff
+                let  ccssrrffValue = " ";
+                var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+  ccssrrffName + '=' +  ccssrrffValue+"&nocache=@(new Date().getTime())"
                 let url = this.dataset.url;
                 ajaxCall(url, dataText);
                 $(this).closest('.dropdown-menu.show').removeClass('show');
@@ -463,9 +462,9 @@
 
             function assembleDataForB5() {
                 var authorizedID = $("#authorizedIDX").val();
-                let csrfName = "_csrf";
-                let csrfValue = "    ";
-                var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+ csrfName + '=' + csrfValue+"&nocache=@(new Date().getTime())"
+                let  ccssrrffName = "_ ccssrrff";
+                let  ccssrrffValue = " ";
+                var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+  ccssrrffName + '=' +  ccssrrffValue+"&nocache=@(new Date().getTime())"
                 let url = this.dataset.url;
                 ajaxB5Call(url, dataText);
                 //$(this).parents().find('.show').removeClass('show');
@@ -490,404 +489,59 @@
                                 </div>
                                 <div class="vh-100 vw-100 p-0 mx-0 mt-0" id="core-container">
                                     <div class="overflow-auto vh-100 noshow pb-5 mb-5" id="b3wrapper">
-                                        <div class="bootstrap3-iso" id="page-wrapper">
-                                            
-
-                                            
-                                        </div>
-                                        <div class="d-flex flex-column w-100 text-center" id="b3endmarker">
+                                        <div class="bootstrap3-iso" id="page-wrapper"></div>
+                                        <div class="d-flex flex-column w-100 text-center d-none" id="b3endmarker">
                                             <p class="invisible"> End of Page Bootstrap 3 // should not be removed </p>
                                         </div>
                                     </div>
                                     <div class="overflow-auto vh-100 pb-5 mb-5 showBlock" id="b5wrapper">
                                         <div class="w-100 mb-5" id="b5-pagewrapper">
-                                            
-		<div class="row px-3"> <!-- spotlight made not visible for sdc roles -->
+<!--
+  Author: Dhakshnamoorthy S
+  Date  : 08/06/2020
+-->
+
+
+
+	<style>
+		.headerTextColor {
+			color: blue;
+		}
+
+		.titleBackgroundColor {
+			background-color: rgb(38, 114, 164);
+		}
+	</style>
+
+
+
+	<div class="container-fluid" id="main-section">
+
+		<div class="row px-3">
 			<div class="col-12">
-				<div class="card">
-					<div class="card border-0">
-						<div class="card-header">
-							<strong class="fw-bold h3 text-dark">Spotlight</strong>
-						</div>
-						<div class="card-body">
-							<div class="row">
-								<div class="col-sm-3">
-							<div class="d-flex flex-column">
-								
-									<div>
-										<button class="btn btn-sm btn-info fw-bold position-relative mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#spotlightAcad" aria-controls="#spotlightAcad">
-											<span>Academics</span>
-											<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-												<span class="text-light">3</span>
-												<span class="visually-hidden">unread messages</span>
-											</span>
-										</button>
-										
 
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			<li class="list-group-item py-1">
-				<div class="d-flex w-100 align-items-stretch justify-content-start">
-					<div class="hightlight1 px-3 ">
-						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+				<div class="card mx-auto border-0 shadow-lg">
+					<div class="card-header border-0 py-3 text-center headerTextColor">
+						<strong class="fw-bold h2 "> VIT Bhopal Campus Contact Details</strong>
 					</div>
-					<div class=" w-75 py-0">
+					<div style="color: red; text-align: center;"> 
+						<strong></strong>
+						</div>
+					<div class="card-body">
 						
-						
-
-						<a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/58');">
-							<span class="fg-black">Senior Batches UG Academic Calendar 2025-26</span> </a>
-
 					</div>
 				</div>
-			</li>
-			<li class="list-group-item py-1">
-				<div class="d-flex w-100 align-items-stretch justify-content-start">
-					<div class="hightlight1 px-3 ">
-						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
-					</div>
-					<div class=" w-75 py-0">
-						
-						
-
-						<a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/57');">
-							<span class="fg-black">2025 Batch PG Academic Calendar 2025-26</span> </a>
-
-					</div>
-				</div>
-			</li>
-			<li class="list-group-item py-1">
-				<div class="d-flex w-100 align-items-stretch justify-content-start">
-					<div class="hightlight1 px-3 ">
-						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
-					</div>
-					<div class=" w-75 py-0">
-						
-						
-
-						<a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/56');">
-							<span class="fg-black">2025 Batch UG Academic Calendar 2025-26</span> </a>
-
-					</div>
-				</div>
-			</li>
-		</ul>
-
-	
-
-									</div>
-								
-									
-								
-									
-								
-									
-								
-									
-								
-									
-								
-									
-								
-									
-								
-									
-								
-							</div>
-						</div>
-						
-						</div>
-						</div>
-					</div>
-				</div>
-					
-			</div>
-		</div>
-		
-		<div class="row">
-			<div class="col-sm-12">
-				
-
-
-
-    <meta charset="ISO-8859-1">
-    <!-- <script type="text/javascript" src="VIT%20Bhopal%20-%20VTOP_files/ChartLoader.js"></script> -->
-    <link rel="stylesheet" href="css/datatables.min.css">
-	<!-- <script type="text/javascript" src="VIT%20Bhopal%20-%20VTOP_files/datatables.min.js"></script> -->
-    <style>
-        /* Define a unique background color for the table header */
-        #eventsTable thead {
-            background-color: #f0f0f0; /* You can adjust the color code as needed */
-        }
-    </style>
-
-
-
-
-    
-        
-
-        
-        <br>
-       
-
-        <script type="text/javascript">
-           var taskCount =document.getElementById("barChart").value;
-
-           if(taskCount != null && taskCount.length > 0)
-           {
-            google.charts.load("current", {packages:['corechart']});
-            google.charts.setOnLoadCallback(columnChart);
-            function columnChart() {
-                var data = google.visualization.arrayToDataTable(JSON.parse(taskCount));
-                var view = new google.visualization.DataView(data);
-                var options = {
-                    backgroundColor: 'transparent',
-                    width: 400,
-                    height: 300,
-                    bar: { groupWidth: "80%" },
-                    legend: { position: 'top', maxLines: 3 },
-                    isStacked: true,
-                    annotations: {
-                        alwaysOutside: false,
-                        textStyle: {
-                            fontSize: 12,
-                            auraColor: 'none',
-                            color: '#555',
-                        },chartArea: { width: '120%', height: '80%' },
-                        annotationText: 'horizontal',
-                    },colors: ['#1b9e77', '#ff9900'],
-                };
-                var chart = new google.visualization.BarChart(document.getElementById("columnchart_values"));
-                chart.draw(view, options);
-            }
-           }
-           google.charts.load('current', { 'packages': ['corechart'] });
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-                var studentCount = document.getElementById("studentCount").value;
-                var facultyCount = document.getElementById("facultyCount").value;
-                var staffCount = document.getElementById("staffCount").value;
-                var data = google.visualization.arrayToDataTable([
-                    ['Category', 'Count'],
-                    ['Student', parseInt(studentCount)],
-                    ['Faculty', parseInt(facultyCount)],
-                    ['Staff', parseInt(staffCount)]
-                ]);
-                var options = {
-
-                    is3D: true,
-                    backgroundColor: 'transparent',
-                    //title: 'Active Users'+' - ('+(parseInt(studentCount)+parseInt(facultyCount)+parseInt(staffCount))+')',
-                    width: 400,
-                    height: 300,
-                    colors: ['#316395', '#dc3912', '#ff9900'], //316395 //329262 //5574a6
-                    legend: { position: 'labeled', labeledValueText: 'value', textStyle: { color: 'black', fontSize: 14 } },
-                    chartArea: { width: '120%', height: '80%' }
-                };
-                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-                chart.draw(data, options);
-            }
-        </script>
-    
-
-
-
-
 			</div>
 		</div>
 
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightAcad" aria-labelledby="spotlighLabelAcad">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelAcad">SPOTLIGHT : <span class="text-danger">Academics</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			<li class="list-group-item py-0 text-dark">
-				<div class="d-flex w-100 align-items-stretch justify-content-start">
-					<div class="hightlight1 px-3 ">
-						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
-					</div>
-					<div class="w-75 py-0">
-						
-						
+		<!-- /.content -->
+		<noscript>
+			<h2 class="text-danger">Enable JavaScript to Access VTOP</h2>
+		</noscript>
+	</div>
 
-						<a class="list-group-item-action text-decoration-none" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/58');">
-							<span class="">Senior Batches UG Academic Calendar 2025-26</span> </a>
 
-					</div>
-				</div>
-			</li>
-			<li class="list-group-item py-0 text-dark">
-				<div class="d-flex w-100 align-items-stretch justify-content-start">
-					<div class="hightlight1 px-3 ">
-						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
-					</div>
-					<div class="w-75 py-0">
-						
-						
-
-						<a class="list-group-item-action text-decoration-none" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/57');">
-							<span class="">2025 Batch PG Academic Calendar 2025-26</span> </a>
-
-					</div>
-				</div>
-			</li>
-			<li class="list-group-item py-0 text-dark">
-				<div class="d-flex w-100 align-items-stretch justify-content-start">
-					<div class="hightlight1 px-3 ">
-						<i class="fa fa-bolt fa-6" aria-hidden="true"></i>
-					</div>
-					<div class="w-75 py-0">
-						
-						
-
-						<a class="list-group-item-action text-decoration-none" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/56');">
-							<span class="">2025 Batch UG Academic Calendar 2025-26</span> </a>
-
-					</div>
-				</div>
-			</li>
-		</ul>
-
-	
-				</div>
-			</div>
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightEvent" aria-labelledby="spotlighLabelEvent">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelEvent">SPOTLIGHT : <span class="text-danger">Events</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
-		</ul>
-
-	
-				</div>
-			</div>
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightCOE" aria-labelledby="spotlighLabelCOE">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelCOE">SPOTLIGHT : <span class="text-danger">COE</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
-		</ul>
-
-	
-				</div>
-			</div>
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightAcademic" aria-labelledby="spotlighLabelAcademic">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelAcademic">SPOTLIGHT : <span class="text-danger">Academic Research</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
-		</ul>
-
-	
-				</div>
-			</div>
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightSponsored" aria-labelledby="spotlighLabelSponsored">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelSponsored">SPOTLIGHT : <span class="text-danger">Sponsored Research</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
-		</ul>
-
-	
-				</div>
-			</div>
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightSpoRIC" aria-labelledby="spotlighLabelSpoRIC">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelSpoRIC">SPOTLIGHT : <span class="text-danger">SpoRIC</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
-		</ul>
-
-	
-				</div>
-			</div>
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightAdmissions" aria-labelledby="spotlighLabelAdmissions">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelAdmissions">SPOTLIGHT : <span class="text-danger">Admissions</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
-		</ul>
-
-	
-				</div>
-			</div>
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightIPR" aria-labelledby="spotlighLabelIPR">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelIPR">SPOTLIGHT : <span class="text-danger">IPR</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
-		</ul>
-
-	
-				</div>
-			</div>
-		
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="spotlightOthers" aria-labelledby="spotlighLabelOthers">
-				<div class="offcanvas-header">
-					<h5 class="offcanvas-title fw-bold primaryColor1" id="spotlighLabelOthers">SPOTLIGHT : <span class="text-danger">Others</span></h5>
-					<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-				</div>
-				<div class="offcanvas-body">
-					
-		
-		<ul class="list-group list-group-flush text-start  spotlight-background">
-			
-		</ul>
-
-	
-				</div>
-			</div>
-		
-		
-	
-                                        </div>
+</div>
                                         <div class="d-flex flex-column w-100 text-center" id="b5endmarker">
                                             <p class="invisible"> End of Page Bootstrap 5 // should not be removed </p>
                                         </div>
@@ -926,7 +580,7 @@
             
                 <a data-url="academics/common/FaqPreview" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> FAQ</a>
             
-                <a data-url="spotlight/spotlightViewOld" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="/VITspot.html">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Spotlight</a>
+                <a data-url="spotlight/spotlightViewOld" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Spotlight</a>
             
                 <a data-url="admissions/costCentreCircularsViewPageController" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="javascript:void(0);">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> General</a>
             
@@ -1048,6 +702,7 @@
                 <a data-url="others/bonafide/StudentBonafidePageControl" class="dropdown-item menuFontStyle textColor2 systemMainMenu " href="/VITChat.html">&nbsp;&nbsp;&nbsp;<i class="fa fa-dot-circle-o iconSpace "></i> Complaint Helper</a></div></div></div></div>
             
 
+
         
 
 
@@ -1066,18 +721,18 @@
 
             function assembleData() {
                 var authorizedID = $("#authorizedIDX").val();
-                let csrfName = "_csrf";
-                let csrfValue = "    ";
-                var dataText = "verifyMenu=true&authorizedID=" + authorizedID + "&" + csrfName + '=' + csrfValue + "&nocache=@(new Date().getTime())"
+                let  ccssrrffName = "_ ccssrrff";
+                let  ccssrrffValue = " ";
+                var dataText = "verifyMenu=true&authorizedID=" + authorizedID + "&" +  ccssrrffName + '=' +  ccssrrffValue + "&nocache=@(new Date().getTime())"
                 let url = this.dataset.url;
                 ajaxCall(url, dataText);
             }
 
             function assembleDataForB5() {
                 var authorizedID = $("#authorizedIDX").val();
-                let csrfName = "_csrf";
-                let csrfValue = "    ";
-                var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+ csrfName + '=' + csrfValue+"&nocache=@(new Date().getTime())"
+                let  ccssrrffName = "_ ccssrrff";
+                let  ccssrrffValue = " ";
+                var dataText = "verifyMenu=true&authorizedID=" + authorizedID +"&"+  ccssrrffName + '=' +  ccssrrffValue+"&nocache=@(new Date().getTime())"
                 let url = this.dataset.url;
                 ajaxB5Call(url, dataText);
             }
@@ -1097,27 +752,17 @@
                     
                     
 
-        <div class="row noshow" id="popup">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <span class="h6 fw-bold">Loading... Please Wait</span>
-                    </div>
-                    <div class="card-body">
-                        <img src= "rescr/ajax-loader_bert.gif" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     
-                <div class="row noshow" id="popup" style="cursor: default;">
+                
+            <div class="row noshow" id="popup" style="cursor: default;">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         <span class="h6 fw-bold">Loading... Please Wait</span>
                     </div>
                     <div class="card-body">
-                        <img src= "rescr/ajax-loader_bert.gif" class="img-fluid">
+                        <img src="rescr/ajax-loader_bert.gif" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -1188,6 +833,7 @@
         <script type="text/javascript" src="js/validate2.js"></script>
         <script type="text/javascript" src="js/app.js"></script> -->
 
+
         <script>
             /*<![CDATA[*/
 
@@ -1211,10 +857,10 @@
 
 
             function showHistory() {
-                let csrfName = "_csrf";
-                let csrfValue = "    ";
+                let  ccssrrffName = "_ ccssrrff";
+                let  ccssrrffValue = " ";
                 let id =UserRegNo;
-                let params = "authorizedID=" + id + "&" + csrfName + "=" + csrfValue + "&x=" + now.toUTCString();
+                let params = "authorizedID=" + id + "&" +  ccssrrffName + "=" +  ccssrrffValue + "&x=" + now.toUTCString();
                 ajaxB5Call("show/login/history", params, "b5-pagewrapper");
                 historyBtn1.addEventListener("click", showHistory);
             }
@@ -1222,14 +868,14 @@
             function vtopDownload(urlText, dataToSend) {
 
                 var params = null;
-                var csrfName = "_csrf";
-                var csrfValue = "    ";
+                var  ccssrrffName = "_ ccssrrff";
+                var  ccssrrffValue = " ";
                 var id =UserRegNo;
                 var now = new Date();
                 if (dataToSend === 'null' || dataToSend === undefined || dataToSend === null || dataToSend === '') {
-                    params = "authorizedID=" + id + "&" + csrfName + "=" + csrfValue + "&x=" + now.toUTCString();
+                    params = "authorizedID=" + id + "&" +  ccssrrffName + "=" +  ccssrrffValue + "&x=" + now.toUTCString();
                 } else {
-                    params = dataToSend + "&" + csrfName + "=" + csrfValue + "&authorizedID=" + id + "&x=" + now.toUTCString();
+                    params = dataToSend + "&" +  ccssrrffName + "=" +  ccssrrffValue + "&authorizedID=" + id + "&x=" + now.toUTCString();
                 }
 
                 window.open(urlText + '?' + params);
@@ -1250,14 +896,14 @@
     
 
 
-        <div class="modal fade" id="confirmBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" style="display: none;" aria-hidden="true">
+        <div class="modal fade" id="confirmBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable undefined" id="confirmModal">
+            <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable " id="confirmModal">
                 <div class="modal-content">
 
-                    <div class="modal-header py-1 bg-info text-light" id="boxHeader">
+                    <div class="modal-header py-1" id="boxHeader">
 
-                        <span class="modal-title text-light fs-5" id="boxTitle">Confirm</span>
+                        <span class="modal-title text-light fs-5" id="boxTitle">Please Note !!!</span>
                         <button type="button" class="btn-close text-light" data-bs-dismiss="modal" id="clsBtn" aria-label="Close"></button>
 
                     </div>
@@ -1266,24 +912,24 @@
 
                         <div class="d-flex flex-column w-auto">
                             <div class="mx-auto">
-                                <img src=    "rescr/ajax-loader_bert.gif" id="progressGIF" class="img-fluid">
+                                <img src="rescr/ajax-loader_bert.gif" id="progressGIF" class="img-fluid">
                             </div>
                             <div id="confrimTextArea" class="d-flex">
                                 <div class="mx-2">
-                                    <i id="tickIcon" class="bi bi-check2-circle fs-1 text-success fw-bold d-none"></i>
-                                    <i id="errorIcon" class="bi bi-x-octagon fs-1 text-danger fw-bold d-none"></i>
+                                    <i id="tickIcon" class="bi bi-check2-circle fs-1 text-success fw-bold"></i>
+                                    <i id="errorIcon" class="bi bi-x-octagon fs-1 text-danger fw-bold"></i>
                                 </div>
-                                <span id="boxMessage" class="align-self-center text-danger fw-bold d-none">Are you Sure ?</span>
+                                <span id="boxMessage" class="align-self-center"></span>
                             </div>
                         </div>
 
                     </div>
 
-                    <div class="modal-footer py-1 d-flex bg-light text-dark" id="boxFooter">
+                    <div class="modal-footer py-1 d-flex" id="boxFooter">
 
                         <div class="d-grid gap-2 d-md-flex justify-content-end">
-                            <button class="btn btn-sm btn-danger me-md-2 invisible disabled" id="cancelButton" data-callback="" type="button">No</button>
-                            <button class="btn btn-sm btn-success invisible disabled" id="confirmButton" type="button">Yes</button>
+                            <button class="btn btn-sm btn-danger me-md-2" id="cancelButton" data-callback="" type="button"></button>
+                            <button class="btn btn-sm btn-success" id="confirmButton" type="button"></button>
                             <button type="button" id="okButton" data-bs-dismiss="modal" class="btn btn-sm btn-danger invisible disabled" aria-label="Close">Ok</button>
                         </div>
 
@@ -1600,74 +1246,6 @@
 
             /*]]>*/
         </script> -->
-
-
-       
-    
-
-
-<div class="sweet-overlay" tabindex="-1" style="opacity: -0.02; display: none;"></div><div class="sweet-alert hideSweetAlert" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-outside-click="false" data-has-done-function="false" data-animation="pop" data-timer="null" style="display: none; margin-top: -180px; opacity: -0.02;"><div class="sa-icon sa-error" style="display: block;">
-      <span class="sa-x-mark">
-        <span class="sa-line sa-left"></span>
-        <span class="sa-line sa-right"></span>
-      </span>
-    </div><div class="sa-icon sa-warning" style="display: none;">
-      <span class="sa-body"></span>
-      <span class="sa-dot"></span>
-    </div><div class="sa-icon sa-info" style="display: none;"></div><div class="sa-icon sa-success" style="display: none;">
-      <span class="sa-line sa-tip"></span>
-      <span class="sa-line sa-long"></span>
-
-      <div class="sa-placeholder"></div>
-      <div class="sa-fix"></div>
-    </div><div class="sa-icon sa-custom" style="display: none;"></div><h2>Activity Not Permitted, Contact O/o CoE</h2>
-    <p></p>
-    <fieldset>
-      <input type="text" tabindex="3" placeholder="">
-      <div class="sa-input-error"></div>
-    </fieldset><div class="sa-error-container">
-      <div class="icon">!</div>
-      <p>Not valid!</p>
-    </div><div class="sa-button-container">
-      <button class="cancel" tabindex="2" style="display: none; box-shadow: none;">Cancel</button>
-      <div class="sa-confirm-button-container">
-        <button class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(140, 212, 245); box-shadow: rgba(140, 212, 245, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;">OK</button><div class="la-ball-fall">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    </div></div>    
-
-<script>
-            // Check if user is logged in
-            const user = JSON.parse(sessionStorage.getItem('user'));
-            
-            if (!user) {
-                window.location.replace('/index.html');
-            }else{
-
-            }
-            
-            // Logout button
-            document.getElementById('logoutBtn').addEventListener('click', () => {
-                sessionStorage.removeItem('user');
-                // Clear browser cache and prevent back navigation
-                window.location.replace('/index.html');
-            });
-            
-            // Additional protection against back button
-            window.onpopstate = function(event) {
-                const currentUser = JSON.parse(sessionStorage.getItem('user'));
-                if (!currentUser) {
-                    window.location.replace('/index.html');
-                }
-            };
-            history.pushState(null, null, window.location.href);
-        </script>
-
-
-
 
 
 </body></html>
