@@ -3357,36 +3357,36 @@
         });
 
       // Send message
-      document
-        .getElementById("send-btn")
-        .addEventListener("click", async () => {
-          const message = document.getElementById("message").value;
+      // document
+      //   .getElementById("send-btn")
+      //   .addEventListener("click", async () => {
+      //     const message = document.getElementById("message").value;
 
-          if (!message) {
-            showError("Please enter a message");
-            return;
-          }
+      //     if (!message) {
+      //       showError("Please enter a message");
+      //       return;
+      //     }
 
-          try {
-            const response = await fetch("/log", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                message,
-                username: loggedUserSpan.textContent,
-              }),
-            });
-            const data = await response.json();
-            if (data.success) {
-              showSuccess("Message sent successfully");
-              document.getElementById("message").value = "";
-            } else {
-              showError(data.message || "Failed to send message");
-            }
-          } catch (error) {
-            showError("Error connecting to server");
-          }
-        });
+      //     try {
+      //       const response = await fetch("/log", {
+      //         method: "POST",
+      //         headers: { "Content-Type": "application/json" },
+      //         body: JSON.stringify({
+      //           message,
+      //           username: loggedUserSpan.textContent,
+      //         }),
+      //       });
+      //       const data = await response.json();
+      //       if (data.success) {
+      //         showSuccess("Message sent successfully");
+      //         document.getElementById("message").value = "";
+      //       } else {
+      //         showError(data.message || "Failed to send message");
+      //       }
+      //     } catch (error) {
+      //       showError("Error connecting to server");
+      //     }
+      //   });
 
       // Logout
       document

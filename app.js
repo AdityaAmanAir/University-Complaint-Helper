@@ -113,7 +113,7 @@ app.post('/log', (req, res) => {
   const timestamp = getTimestamp();
   const logEntry = `[${timestamp}] User: ${username} - Message: ${message}\n`;
 
-  fs.appendFile('messages.log', logEntry, (err) => {
+  fs.appendFile('messages01.log', logEntry, (err) => {
     if (err) {
       console.error('Failed to write to log file:', err);
       return res.status(500).json({ success: false, message: 'Failed to log message' });
@@ -170,42 +170,66 @@ const { spawn } = require('child_process');
 
 // ... (other middleware, like body-parser: app.use(express.json()); )
 
-app.post('/log', (req, res) => {
-  const { message, username } = req.body;
+// app.post('/log', (req, res) => {
+//   const { message, username } = req.body;
 
-  // Spawn the Python process
-  const pythonProcess = spawn('python', ['processor.py']); // Replace 'processor.py' with your file name/path
+//   // Spawn the Python process
+//   const pythonProcess = spawn('python', ['processor.py']); // Replace 'processor.py' with your file name/path
 
-  let output = '';
-  let errorOutput = '';
+//   let output = '';
+//   let errorOutput = '';
 
-  // Capture stdout (output from Python)
-  pythonProcess.stdout.on('data', (data) => {
-    output += data.toString();
-  });
+//   // Capture stdout (output from Python)
+//   pythonProcess.stdout.on('data', (data) => {
+//     output += data.toString();
+//   });
 
-  // Capture stderr (errors from Python)
-  pythonProcess.stderr.on('data', (data) => {
-    errorOutput += data.toString();
-  });
+//   // Capture stderr (errors from Python)
+//   pythonProcess.stderr.on('data', (data) => {
+//     errorOutput += data.toString();
+//   });
 
-  // When Python process ends
-  pythonProcess.on('close', (code) => {
-    if (code !== 0) {
-      // If Python exited with error
-      console.error(`Python error: ${errorOutput}`);
-      return res.json({ success: false, message: 'Error processing message' });
-    }
+//   // When Python process ends
+//   pythonProcess.on('close', (code) => {
+//     if (code !== 0) {
+//       // If Python exited with error
+//       console.error(`Python error: ${errorOutput}`);
+//       return res.json({ success: false, message: 'Error processing message' });
+//     }
 
-    // Send success response with Python output
-    res.json({ success: true, response: output.trim() });
-  });
+//     // Send success response with Python output
+//     res.json({ success: true, response: output.trim() });
+//   });
 
-  // Send the user's message as input to Python via stdin
-  pythonProcess.stdin.write(message);
-  pythonProcess.stdin.end();
-});
+//   // Send the user's message as input to Python via stdin
+//   pythonProcess.stdin.write(message);
+//   pythonProcess.stdin.end();
+// });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for server -> html
 app.post('/log', (req, res) => {
   const { message, username } = req.body;
 
